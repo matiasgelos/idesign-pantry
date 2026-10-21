@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<!-- Safari offers the App Clip on this page itself when its URL matches an App Clip experience (in
+     development: a Local Experience registered on the phone for this site's prefix). -->
+<meta name="apple-itunes-app" content="app-clip-bundle-id=com.framesixty.idesign.nativescan.Clip, app-clip-display=card">
+<title>iDesign Pantry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --ink: #1f1f1f; --mute: #5f6061; --line: #e2e0d8; --cream: #f6f6f0; --card: #ffffff;
+    --black: #000000; --teal: #007398; --teal-soft: #e3f0f4; --terracotta: #c25b41; --shelf: #d9cdb4;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--card); color: var(--ink); -webkit-font-smoothing: antialiased;
+         font: 16px/1.5 "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  [hidden] { display: none !important; }
+  .app { min-height: 100%; max-width: 30rem; margin: 0 auto; display: flex; flex-direction: column;
+         padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px); }
+  .top { display: flex; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  .top img { height: 26px; width: auto; display: block; }
+  main { flex: 1; display: flex; flex-direction: column; gap: 22px; padding: 0 20px 28px; }
+  .art { margin: 0 -20px; background: var(--cream); padding: 22px 28px 0; }
+  .art svg { display: block; width: 100%; height: auto; max-height: 34vh; }
+  .eyebrow { margin: 0; font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  h1 { margin: 6px 0 0; font-size: 1.85rem; line-height: 1.15; font-weight: 700; color: var(--black); text-wrap: balance; }
+  .lede { margin: 10px 0 0; color: var(--mute); }
+  .cta { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+  .btn { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 14px 18px;
+         background: var(--black); color: #fff; border: 1px solid var(--black); border-radius: 0; text-decoration: none;
+         font-size: .82rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .btn:active { background: #2a2a2a; }
+  .note { margin: 0; text-align: center; font-size: .85rem; color: var(--mute); }
+  .qr { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 16px; align-items: center; padding: 16px; background: var(--cream); }
+  .qr #code { width: 132px; height: 132px; background: #fff; padding: 8px; }
+  .qr #code svg, .qr #code img { width: 100%; height: 100%; display: block; }
+  .qr p { margin: 0; font-size: .9rem; }
+  .qr b { display: block; margin-bottom: 4px; color: var(--black); }
+  details { font-size: .85rem; color: var(--mute); }
+  details summary { cursor: pointer; text-align: center; list-style: none; text-decoration: underline; text-underline-offset: 3px; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary { margin-bottom: 10px; }
+  footer { padding: 16px 20px 22px; text-align: center; font-size: .72rem; color: var(--mute); }
+  @media (min-width: 720px) { .app { max-width: 34rem; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top"><img src="idesign-logo.svg" alt="iDesign"></header>
+  <main>
+    <div class="art" aria-hidden="true">
+      <!-- An open pantry, drawn rather than photographed: three shelves with clear bins, a turntable and a riser. -->
+      <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="8" width="240" height="192" fill="#ffffff" stroke="#cfc8b6" stroke-width="2"/>
+        <rect x="40" y="70" width="240" height="5" fill="var(--shelf)"/>
+        <rect x="40" y="134" width="240" height="5" fill="var(--shelf)"/>
+        <rect x="8" y="8" width="32" height="192" fill="#efece3" stroke="#cfc8b6" stroke-width="2"/>
+        <rect x="280" y="8" width="32" height="192" fill="#efece3" stroke="#cfc8b6" stroke-width="2"/>
+        <g fill="rgba(0,115,152,.10)" stroke="#007398" stroke-width="1.6">
+          <rect x="56" y="34" width="62" height="36" rx="3"/><rect x="128" y="40" width="62" height="30" rx="3"/>
+          <rect x="62" y="96" width="78" height="38" rx="3"/><rect x="214" y="100" width="52" height="34" rx="3"/>
+          <rect x="56" y="160" width="96" height="40" rx="3"/><rect x="162" y="164" width="104" height="36" rx="3"/>
+        </g>
+        <g fill="#c25b41" opacity=".85">
+          <rect x="64" y="44" width="10" height="26" rx="2"/><rect x="78" y="40" width="10" height="30" rx="2"/><rect x="92" y="46" width="10" height="24" rx="2"/>
+          <rect x="138" y="50" width="16" height="20" rx="2"/><rect x="160" y="48" width="16" height="22" rx="2"/>
+        </g>
+        <g fill="#e9dfcf" stroke="#8a7a62" stroke-width="1.4">
+          <ellipse cx="236" cy="64" rx="30" ry="5"/>
+          <rect x="216" y="38" width="12" height="24" rx="2"/><rect x="232" y="34" width="12" height="28" rx="2"/><rect x="248" y="40" width="12" height="22" rx="2"/>
+          <rect x="150" y="110" width="54" height="8"/><rect x="150" y="118" width="54" height="8"/><rect x="150" y="126" width="54" height="8"/>
+          <rect x="70" y="106" width="14" height="28" rx="2"/><rect x="90" y="102" width="14" height="32" rx="2"/><rect x="110" y="108" width="14" height="26" rx="2"/>
+          <rect x="222" y="110" width="16" height="24" rx="2"/><rect x="242" y="106" width="16" height="28" rx="2"/>
+          <rect x="66" y="170" width="20" height="30" rx="2"/><rect x="92" y="174" width="20" height="26" rx="2"/><rect x="118" y="168" width="20" height="32" rx="2"/>
+          <rect x="172" y="176" width="26" height="24" rx="2"/><rect x="204" y="172" width="26" height="28" rx="2"/><rect x="236" y="178" width="22" height="22" rx="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <header>
+      <p class="eyebrow" id="eyebrow">Pantry organizer</p>
+      <h1 id="title">Let's organize your pantry</h1>
+      <p class="lede" id="lede">Answer four quick questions with your guide, measure your shelves and see your pantry organized with iDesign products that fit.</p>
+    </header>
+
+    <div class="cta">
+      <a class="btn" id="go" href="#">Start</a>
+      <p class="note" id="note">Opens instantly on iPhone. Nothing to install.</p>
+      <details id="help" hidden>
+        <summary id="help-title">Didn't open?</summary>
+        <p id="help-text">Open this page on a computer and scan the code with your iPhone's Camera.</p>
+      </details>
+      <div class="qr" id="qr" hidden>
+        <div id="code" aria-label="QR code"></div>
+        <p><b id="qr-title">On your iPhone</b><span id="qr-text">Point the Camera at this code and tap the iDesign card.</span></p>
+      </div>
+    </div>
+  </main>
+  <footer id="foot">Prototype · iDesign pantry organizer</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+  // Where the flow's server runs while this is a prototype: the Mac on the test Wi-Fi. Override with
+  // ?server=… on this page's own link. The App Clip receives it in its invocation URL.
+  const params = new URLSearchParams(location.search);
+  const SERVER = params.get("server") || "http://192.168.86.28:8020";
+  const LANG = params.get("lang") === "es" || (!params.has("lang") && /^es\b/i.test(navigator.language || "")) ? "es" : "en";
+
+  const TEXT = {
+    es: {
+      eyebrow: "Organizador de despensa", title: "Organicemos tu despensa",
+      lede: "Responde cuatro preguntas rápidas con tu guía, mide tus estantes y mira tu despensa organizada con productos iDesign que entran.",
+      go: "Empezar", noteIOS: "Se abre al instante en iPhone. No hay nada que instalar.",
+      noteWeb: "Sigue en la web en este teléfono.", noteDesktop: "Mejor en el teléfono. Escanea el código con tu iPhone.",
+      helpTitle: "¿No se abrió?", helpText: "Abre esta página en una computadora y escanea el código con la Cámara de tu iPhone.",
+      qrTitle: "En tu iPhone", qrText: "Apunta la Cámara a este código y toca la tarjeta de iDesign.",
+      foot: "Prototipo · organizador de despensas iDesign",
+    },
+  };
+  const tx = TEXT[LANG] || {};
+  const set = (id, key) => { if (tx[key]) document.getElementById(id).textContent = tx[key]; };
+  document.documentElement.lang = LANG;
+  set("eyebrow", "eyebrow"); set("title", "title"); set("lede", "lede"); set("go", "go");
+  set("help-title", "helpTitle"); set("help-text", "helpText"); set("qr-title", "qrTitle"); set("qr-text", "qrText"); set("foot", "foot");
+
+  // The App Clip's invocation URL. In production this is the Apple App Clip link; until the clip is
+  // published it is this site's /open path, which a Local Experience on the test phone maps to the clip.
+  const base = location.href.split(/[?#]/)[0].replace(/index\.html$/, "");
+  const CLIP = `${base}open?server=${encodeURIComponent(SERVER)}&lang=${LANG}`;
+
+  const ua = navigator.userAgent;
+  const iOS = /iPhone|iPad/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+  const android = /Android/i.test(ua);
+  const go = document.getElementById("go"), note = document.getElementById("note");
+
+  function drawQR() {
+    try {
+      const qr = qrcode(0, "M");
+      qr.addData(CLIP); qr.make();
+      document.getElementById("code").innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+      document.getElementById("qr").hidden = false;
+    } catch {}
+  }
+
+  if (iOS) {
+    // A real tap on a link is what opens an App Clip card; nothing scripted does.
+    go.href = CLIP;
+    document.getElementById("help").hidden = false;
+  } else if (android) {
+    // No App Clips on Android (Instant Apps were retired in December 2025): the same flow on the web.
+    go.href = `${SERVER}/flow.html?lang=${LANG}`;
+    note.textContent = tx.noteWeb || "Continues on the web on this phone.";
+  } else {
+    go.remove();
+    note.textContent = tx.noteDesktop || "Best on your phone. Scan the code with your iPhone.";
+    drawQR();
+  }
+</script>
+</body>
+</html>
