@@ -4,50 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<!-- This is the App Clip's invocation URL. When iOS hands it to the clip, this page is never seen; in Safari it
+     sits behind the App Clip card, so it says what the card is for. Without the clip it offers the web flow. -->
 <meta name="apple-itunes-app" content="app-clip-bundle-id=com.framesixty.idesign.nativescan.Clip, app-clip-display=card">
 <title>iDesign Pantry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
 <style>
-  :root { --ink: #1f1f1f; --mute: #5f6061; --line: #e2e0d8; --cream: #f6f6f0; --black: #000; --teal: #007398; color-scheme: light; }
+  :root {
+    --ink: #1f1f1f; --mute: #5f6061; --line: #e2e0d8; --cream: #f6f6f0; --card: #ffffff;
+    --black: #000000; --teal: #007398; --teal-soft: #e3f0f4; --shelf: #d9cdb4;
+    color-scheme: light;
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.5 "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  .app { max-width: 30rem; margin: 0 auto; padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px); }
-  .top { padding: 14px 20px; border-bottom: 1px solid var(--line); }
-  .top img { height: 26px; display: block; }
-  main { padding: 24px 20px 32px; display: flex; flex-direction: column; gap: 18px; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--card); color: var(--ink); -webkit-font-smoothing: antialiased;
+         font: 16px/1.5 "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  [hidden] { display: none !important; }
+  .app { min-height: 100%; max-width: 30rem; margin: 0 auto; display: flex; flex-direction: column;
+         padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px); }
+  .top { display: flex; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  .top img { height: 26px; width: auto; display: block; }
+  main { flex: 1; display: flex; flex-direction: column; gap: 22px; padding: 26px 20px 28px; }
   .eyebrow { margin: 0; font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
-  h1 { margin: 6px 0 0; font-size: 1.5rem; line-height: 1.2; color: var(--black); text-wrap: balance; }
-  ol { margin: 0; padding: 16px 16px 16px 36px; background: var(--cream); display: grid; gap: 10px; font-size: .92rem; }
-  code { font-size: .82rem; overflow-wrap: anywhere; background: #fff; padding: 1px 4px; }
-  .btn { display: flex; align-items: center; justify-content: center; min-height: 52px; background: var(--black); color: #fff;
-         text-decoration: none; font-size: .82rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
-  p { margin: 0; }
-  .small { font-size: .85rem; color: var(--mute); }
+  h1 { margin: 6px 0 0; font-size: 1.85rem; line-height: 1.15; font-weight: 700; color: var(--black); text-wrap: balance; }
+  .lede { margin: 10px 0 0; color: var(--mute); }
+  .tap { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 12px; border-radius: 99px;
+         background: var(--teal-soft); color: var(--teal); font-size: .85rem; font-weight: 600; }
+  .tap svg { width: 16px; height: 16px; }
+  .art { margin: 0 -20px; background: var(--cream); padding: 22px 28px 0; }
+  .art svg { display: block; width: 100%; height: auto; max-height: 30vh; }
+  .cta { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+  .btn { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 14px 18px; border-radius: 0;
+         background: transparent; color: var(--black); border: 1px solid var(--black); text-decoration: none;
+         font-size: .82rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .btn:active { background: var(--cream); }
+  .note { margin: 0; text-align: center; font-size: .85rem; color: var(--mute); }
+  details { font-size: .85rem; color: var(--mute); }
+  details summary { cursor: pointer; text-align: center; list-style: none; text-decoration: underline; text-underline-offset: 3px; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary { margin-bottom: 10px; }
+  details ol { margin: 0; padding: 14px 14px 14px 32px; background: var(--cream); display: grid; gap: 8px; }
+  code { font-size: .78rem; overflow-wrap: anywhere; background: #fff; padding: 1px 4px; }
+  footer { padding: 16px 20px 22px; text-align: center; font-size: .72rem; color: var(--mute); }
 </style>
 </head>
 <body>
 <div class="app">
   <header class="top"><img src="../idesign-logo.svg" alt="iDesign"></header>
   <main>
-    <div>
-      <p class="eyebrow">Prototype</p>
-      <h1>The App Clip didn't open</h1>
+    <header>
+      <p class="eyebrow" data-t="eyebrow">Pantry organizer</p>
+      <h1 data-t="title">Let's organize your pantry</h1>
+      <p class="lede" id="lede" data-t="lede">Three quick questions with your guide, a scan of your shelves, and your pantry organized with iDesign products that fit.</p>
+      <span class="tap" id="tap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        <span id="tap-text" data-t="tapSafari">Tap Open App Clip to start</span>
+      </span>
+    </header>
+
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="8" width="240" height="192" fill="#ffffff" stroke="#cfc8b6" stroke-width="2"/>
+        <rect x="40" y="70" width="240" height="5" fill="var(--shelf)"/>
+        <rect x="40" y="134" width="240" height="5" fill="var(--shelf)"/>
+        <rect x="8" y="8" width="32" height="192" fill="#efece3" stroke="#cfc8b6" stroke-width="2"/>
+        <rect x="280" y="8" width="32" height="192" fill="#efece3" stroke="#cfc8b6" stroke-width="2"/>
+        <g fill="rgba(0,115,152,.10)" stroke="#007398" stroke-width="1.6">
+          <rect x="56" y="34" width="62" height="36" rx="3"/><rect x="128" y="40" width="62" height="30" rx="3"/>
+          <rect x="62" y="96" width="78" height="38" rx="3"/><rect x="214" y="100" width="52" height="34" rx="3"/>
+          <rect x="56" y="160" width="96" height="40" rx="3"/><rect x="162" y="164" width="104" height="36" rx="3"/>
+        </g>
+        <g fill="#c25b41" opacity=".85">
+          <rect x="64" y="44" width="10" height="26" rx="2"/><rect x="78" y="40" width="10" height="30" rx="2"/><rect x="92" y="46" width="10" height="24" rx="2"/>
+          <rect x="138" y="50" width="16" height="20" rx="2"/><rect x="160" y="48" width="16" height="22" rx="2"/>
+        </g>
+        <g fill="#e9dfcf" stroke="#8a7a62" stroke-width="1.4">
+          <ellipse cx="236" cy="64" rx="30" ry="5"/>
+          <rect x="216" y="38" width="12" height="24" rx="2"/><rect x="232" y="34" width="12" height="28" rx="2"/><rect x="248" y="40" width="12" height="22" rx="2"/>
+          <rect x="150" y="110" width="54" height="8"/><rect x="150" y="118" width="54" height="8"/><rect x="150" y="126" width="54" height="8"/>
+          <rect x="70" y="106" width="14" height="28" rx="2"/><rect x="90" y="102" width="14" height="32" rx="2"/><rect x="110" y="108" width="14" height="26" rx="2"/>
+          <rect x="222" y="110" width="16" height="24" rx="2"/><rect x="242" y="106" width="16" height="28" rx="2"/>
+          <rect x="66" y="170" width="20" height="30" rx="2"/><rect x="92" y="174" width="20" height="26" rx="2"/><rect x="118" y="168" width="20" height="32" rx="2"/>
+          <rect x="172" y="176" width="26" height="24" rx="2"/><rect x="204" y="172" width="26" height="28" rx="2"/><rect x="236" y="178" width="22" height="22" rx="2"/>
+        </g>
+      </svg>
     </div>
-    <p class="small">Safari loaded this page instead of the iDesign App Clip. While the clip is not published, a test iPhone opens it through a Local Experience:</p>
-    <ol>
-      <li>Install the clip on the phone from Xcode (scheme NativeScanClip).</li>
-      <li>Settings → Developer → App Clips Testing → Local Experiences → Register: URL prefix <code id="prefix"></code>, bundle ID <code>com.framesixty.idesign.nativescan.Clip</code>.</li>
-      <li>If the full Cabinet Scan app opens instead, delete it from the phone.</li>
-      <li>Scan the QR code on the home page with the Camera, or tap Start there again.</li>
-    </ol>
-    <a class="btn" id="web" href="#">Continue on the web instead</a>
-    <p class="small">The web version runs the same questions and the photo option. LiDAR needs the App Clip.</p>
+
+    <div class="cta">
+      <a class="btn" id="web" href="#" data-t="web">Continue on the web</a>
+      <p class="note" data-t="webNote">Same questions, with a photo instead of the LiDAR scan.</p>
+      <details>
+        <summary data-t="trouble">Not seeing the App Clip?</summary>
+        <ol>
+          <li data-t="step1">Open this page in Safari, not inside another app.</li>
+          <li><span data-t="step2">While the clip is a prototype, the iPhone needs a Local Experience: Settings → Developer → App Clips Testing → Local Experiences, URL prefix</span> <code id="prefix"></code> <span data-t="step2b">and bundle ID</span> <code>com.framesixty.idesign.nativescan.Clip</code>.</li>
+          <li data-t="step3">The clip must be installed from Xcode. If the Cabinet Scan app opens instead, delete it.</li>
+        </ol>
+      </details>
+    </div>
   </main>
+  <footer data-t="foot">Prototype · iDesign pantry organizer</footer>
 </div>
 <script>
   const params = new URLSearchParams(location.search);
   const server = params.get("server") || "http://192.168.86.28:8020";
   const lang = params.get("lang") === "es" ? "es" : "en";
+  // In another app's browser (Instagram, Facebook, Messenger…) there is no App Clip card for an unpublished clip.
+  const inApp = /Instagram|FBAN|FBAV|FB_IAB|Messenger|Line\//i.test(navigator.userAgent);
+
+  const ES = {
+    eyebrow: "Organizador de despensa", title: "Organicemos tu despensa",
+    lede: "Tres preguntas rápidas con tu guía, un escaneo de tus estantes y tu despensa organizada con productos iDesign que entran.",
+    tapSafari: "Toca Abrir App Clip para empezar", tapInApp: "Abre esta página en Safari para empezar",
+    web: "Seguir en la web", webNote: "Las mismas preguntas, con una foto en lugar del escaneo LiDAR.",
+    trouble: "¿No ves el App Clip?", step1: "Abre esta página en Safari, no dentro de otra app.",
+    step2: "Mientras el clip es un prototipo, el iPhone necesita una Local Experience: Ajustes → Desarrollador → App Clips Testing → Local Experiences, prefijo de URL",
+    step2b: "y bundle ID", step3: "El clip tiene que estar instalado desde Xcode. Si se abre la app Cabinet Scan, bórrala.",
+    foot: "Prototipo · organizador de despensas iDesign",
+  };
+  document.documentElement.lang = lang;
+  if (lang === "es") for (const el of document.querySelectorAll("[data-t]")) if (ES[el.dataset.t]) el.textContent = ES[el.dataset.t];
+  if (inApp) document.getElementById("tap-text").textContent = lang === "es" ? ES.tapInApp : "Open this page in Safari to start";
   document.getElementById("prefix").textContent = location.origin + location.pathname.replace(/open\/?(index\.html)?$/, "");
   document.getElementById("web").href = `${server}/flow.html?lang=${lang}`;
 </script>
