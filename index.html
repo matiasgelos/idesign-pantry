@@ -108,10 +108,11 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
-  // Where the flow's server runs while this is a prototype: the Mac on the test Wi-Fi. Override with
-  // ?server=… on this page's own link. The App Clip receives it in its invocation URL.
+  // Where the flow's server runs while this is a prototype: the demo on Cloudflare, behind its sign-in (e-mail
+  // codes for the invited addresses). Override with ?server=… on this page's own link (the Mac on the test Wi-Fi
+  // was http://192.168.86.28:8020). The App Clip receives it in its invocation URL.
   const params = new URLSearchParams(location.search);
-  const SERVER = params.get("server") || "http://192.168.86.28:8020";
+  const SERVER = params.get("server") || "https://framesixty-idesign.pages.dev";
   const LANG = params.get("lang") === "es" || (!params.has("lang") && /^es\b/i.test(navigator.language || "")) ? "es" : "en";
 
   const TEXT = {
